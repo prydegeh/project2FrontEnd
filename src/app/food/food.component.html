@@ -1,0 +1,33 @@
+<!-- 
+<div class="main_menu">
+<h2> Menu </h2>
+<ul class="foods">
+    <li *ngFor="let food of food"
+      [class.selected]="food === selectedFood"
+      (click)="onSelect(food)">
+      <span class="badge">{{food.name}}</span> {{food.price}}
+    </li>
+  </ul>
+</div> -->
+  
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"> Menu </th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let food of food">
+          <td>{{ food.name }}</td>
+          <td>{{ food.price }}</td>
+          <button>Pick Me!</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
