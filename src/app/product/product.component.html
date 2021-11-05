@@ -1,0 +1,46 @@
+<!-- 
+<div class="main_menu">
+<h2> Menu </h2>
+<ul class="foods">
+    <li *ngFor="let food of food"
+      [class.selected]="food === selectedFood"
+      (click)="onSelect(food)">
+      <span class="badge">{{food.name}}</span> {{food.price}}
+    </li>
+  </ul>
+</div> -->
+  
+
+<div class="card-container">
+    <table class="table-bordered">
+      <tbody>
+        <tr *ngFor="let food of food">
+          <td class="cards">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{ food.name }}</mat-card-title>
+              <mat-card-subtitle>{{ food.price }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/w_1280,c_limit/the-ultimate-hamburger.jpg"  alt="Photo of a Burger">
+            <!-- [(NgModel)]= "listItem.quantity" -->
+            <mat-card-content>
+              <p>
+                There should be words here!
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <label>Quantity: </label><input type="number" placeholder="How many?">
+              <button mat-button>ADD TO BAG</button>
+              
+            </mat-card-actions>
+          </mat-card>
+        </td>
+
+          <!-- <td>{{ food.name }}</td>
+          <td>{{ food.price }}</td>
+          <button>Pick Me!</button> -->
+        </tr>
+      </tbody>
+    </table>
+</div>
+

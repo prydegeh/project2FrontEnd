@@ -1,13 +1,24 @@
 .table-bordered{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-self: auto 
+}
+
+
+.table-bordered{
   margin-left: auto;
   margin-right: auto;
 }
 
 table, th, td {
-  border:1px solid black;
+  border: 1.5px solid black;
   width: 100%;
 }
 
+.example-card {
+  max-width: 400px;
+}
 
 /* 
 .foods {

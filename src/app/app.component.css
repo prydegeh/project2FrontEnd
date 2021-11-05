@@ -1,9 +1,6 @@
 /* Application-wide Styles*/
 
   body {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     font-family: "Roboto", sans-serif;
     justify-content: center;
     margin: 0;
@@ -61,6 +58,9 @@
     margin: auto;
     width:100%;
     height: auto;
+    display: flex;
+    flex-direction: row;
+    
   }
 
   p {

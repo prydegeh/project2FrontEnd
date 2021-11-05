@@ -3,11 +3,11 @@ import {Food} from '../food';
 import { FOODS } from '../mock-food';
 
 @Component({
-  selector: 'app-food',
-  templateUrl: './food.component.html',
-  styleUrls: ['./food.component.css']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
-export class FoodComponent implements OnInit {
+export class ProductComponent implements OnInit {
 
   food = FOODS;
   selectedFood?: Food;
