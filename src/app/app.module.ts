@@ -12,18 +12,18 @@ import {AppRoutingModule} from './app-routing-module'
 import {MaterialModule} from '../material.module';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
-import { BillingStatementComponent } from './billing-statement/billing-statement.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { CustomerComponent } from './customer/customer.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     UserComponent,
-    BillingStatementComponent,
     RestaurantComponent,
     CustomerComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
