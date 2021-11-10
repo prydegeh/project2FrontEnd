@@ -13,9 +13,10 @@ import {MaterialModule} from '../material.module';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 import { RestaurantComponent } from './restaurant/restaurant.component';
-import { CustomerComponent } from './customer/customer.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CustomerComponent } from './customer/customer.component';
+import { BillingStatementComponent } from './billing-statement/billing-statement.component';
 
 
 
@@ -25,8 +26,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ProductComponent,
     UserComponent,
     RestaurantComponent,
-    CustomerComponent,
     ProductListComponent,
+    CustomerComponent,
+    BillingStatementComponent
   ],
   imports: [
     BrowserModule,

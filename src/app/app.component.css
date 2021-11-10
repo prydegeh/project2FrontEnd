@@ -53,13 +53,14 @@
     height: 75%;
 
   }
+  .ctn >a >img{
+    display: flex;
+    width: 70%;
+    height: 75%;
+  }
 
   .main {
-    margin: auto;
-    width:100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
+    margin: 0 auto;
     
   }
 

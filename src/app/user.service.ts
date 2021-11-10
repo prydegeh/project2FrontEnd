@@ -1,36 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable, of  } from 'rxjs';
-import { BillingStatement } from '../models/billing-statement';
-//import { data, map } from 'jquery';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';  
+import { Observable, of } from 'rxjs'; 
+import { Customer } from './models/customer';
 import { catchError, map, tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class BillingStatementService {
-
+export class UserService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private baseUrl = 'http://localhost:8100/billingStatements/';
+  private baseUrl = "http://localhost:8100/customers";
 
-  constructor(private http:HttpClient) {}
-  
+  constructor(private http: HttpClient) { }
+
   private log(message: string) {
-    console.log(`billing-statement-service: ${message}`);
-  }
-  getAllBillingStatements(): Observable<BillingStatement[]> {
-
-    return this.http.get<BillingStatement[]>(this.baseUrl+'/billingStatements').pipe(
-      tap(_ => this.log('fetched billing statements')),
-      catchError(this.handleError<BillingStatement[]>('getAllBillingStatements', []))
-   );
+    console.log(`CustomerService: ${message}`);
   }
 
-  
+  getAllCustomers(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.baseUrl + "/customers")
+      .pipe(
+        tap(_ => this.log('fetched customers')),
+        catchError(this.handleError<Customer[]>('getCustomers', []))
+      );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -43,5 +41,5 @@ export class BillingStatementService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-}
+  }
 }

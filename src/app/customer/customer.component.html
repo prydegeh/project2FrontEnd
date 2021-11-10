@@ -1,1 +1,26 @@
-<p>customer works!</p>
+<div>
+    <div>
+        <h2>Customer Details</h2>
+    </div>
+    <div>
+        <table class="table table-info table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th> ID </th>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> Email </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers">
+                    <td>{{customer.id}}</td>
+                    <td>{{customer.firstName}}</td>
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.email}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

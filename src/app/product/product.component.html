@@ -11,16 +11,16 @@
 </div> -->
   
 
-<div class="card-container" fxLayout="row wrap" fxLayoutGap="16px grid">
+<div class="card-container" fxLayout="row wrap" fxLayoutGap="16px grid" >
    
-        <div  *ngFor="let food of food">
+        <div *ngFor="let food of food">
           
           <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>{{ food.name }}</mat-card-title>
               <mat-card-subtitle>{{ food.price }}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/w_1280,c_limit/the-ultimate-hamburger.jpg"  alt="Photo of a Burger">
+            <img class="mat-card-image" src= {{food.url}}  alt="Photo of Food">
             <!-- [(NgModel)]= "listItem.quantity" -->
             <mat-card-content>
               <p>
@@ -29,7 +29,7 @@
             </mat-card-content>
             <mat-card-actions>
               <label>Quantity: </label><input type="number" placeholder="How many?">
-              <button mat-button>ADD TO BAG</button>
+              <button mat-button (click)="addToBag(food)">ADD TO BAG</button>
               
             </mat-card-actions>
           </mat-card>

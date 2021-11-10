@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Billing Statement List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Restaurant Name</th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Extended Price</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let billingStatement of billingStatements">
+              <td>{{billingStatement.restaurantName}}</td>
+              <td>{{billingStatement.productName}}</td>
+              <td>{{billingStatement.unitPrice}}</td>
+              <td>{{billingStatement.quantity}}</td>
+              <td>{{billingStatement.extendedPrice}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
