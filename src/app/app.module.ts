@@ -15,6 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { CustomerComponent } from './customer/customer.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     MaterialModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    DataTablesModule
+    DataTablesModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-.table-bordered{
+/* .table-bordered{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -15,9 +15,14 @@ table, th, td {
   border: 1.5px solid black;
   width: 100%;
 }
-
+*/
 .example-card {
   max-width: 400px;
+} 
+.mat-card-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 

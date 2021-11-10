@@ -1,7 +1,10 @@
-export class Customer {
-    id: number | undefined;
-    firstName: String | undefined;
-    lastName: String | undefined;
-    email: String | undefined;
+export interface Customer {
+    
+    id: number;
+    firstName: String ;
+    lastName: String ;
+    email: String ;
+    userName: String;
+    password: String;
 
 }
