@@ -1,0 +1,33 @@
+<!-- <div class="header">
+    <div class="ctn">
+      <a routerLink="/"> <img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/orange_travelpictdinner_1484336833.png" alt=""></a>
+    </div>
+  </div>
+  <div class="hero">
+    <div class="ctn">
+    </div>
+  </div>
+ <nav> 
+
+ </nav>
+    <div align="center" class="main">
+      <a *ngIf="loginService.isUserLoggedIn()" routerLink="/viewProducts">View Products</a>
+      <a *ngIf="loginService.isUserLoggedIn()" routerLink="/billingStatement">Billing Statement</a>
+      <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login"> Login</a>
+      <router-outlet></router-outlet>
+    </div> -->
+    <header>
+        
+        <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="/" class="navbar-brand">Food Ordering System</a></div>
+        
+        <ul class="navbar-nav">
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/viewProducts" class="nav-link">View Products</a></li>
+          <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+         
+        </ul>
+        
+        </nav>
+        
+        </header>

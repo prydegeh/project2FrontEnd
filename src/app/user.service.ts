@@ -29,7 +29,7 @@ export class UserService {
       );
   }
 
-  createCustomer(customer: object): Observable<object> {  
+  createCustomer(customer: Customer): Observable<object> {  
     return this.http.post(`${this.baseUrl}`+'/createCustomer', customer); 
   }  
    

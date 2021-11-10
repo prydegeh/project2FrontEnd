@@ -18,6 +18,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomerComponent } from './customer/customer.component';
 import { BillingStatementComponent } from './billing-statement/billing-statement.component';
 import { BagComponent } from './bag/bag.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -31,7 +34,10 @@ import { BagComponent } from './bag/bag.component';
     ProductListComponent,
     CustomerComponent,
     BillingStatementComponent,
-    BagComponent
+    BagComponent,
+    LoginComponent,
+    LogoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

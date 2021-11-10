@@ -15,25 +15,9 @@
   <title>Food Ordering App</title>
 </head>
 <body>
-    <div class="header">
-      <div class="ctn">
-        <a routerLink="/"> <img src="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/orange_travelpictdinner_1484336833.png" alt=""></a>
-      </div>
-    </div>
-    <div class="hero">
-      <div class="ctn">
-        <h1>{{ title }}</h1>
-      </div>
-    </div>
-   <nav> 
-
-   </nav>
-      <div align="center" class="main">
-        <a routerLink="/viewProducts">View Products</a>
-        <a routerLink="/billingStatement">Billing Statement</a>
-        <!-- <app-product></app-product> -->
-        <router-outlet></router-outlet>
-      </div>
+      <app-header></app-header>
+      <div class="hero"></div>
+      <router-outlet></router-outlet>
     
     <footer>
       <div class="ctn">
