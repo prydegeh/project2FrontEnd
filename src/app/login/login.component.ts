@@ -9,7 +9,7 @@ import { AuthenticationService } from '../authentication.service';
 export class LoginComponent implements OnInit {
 
 
-  username = 'guest'
+  username = ''
   password = ''
   invalidLogin = false
 
