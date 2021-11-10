@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
-import { UserComponent } from './user/user.component';
+import { RegisterCustomer } from './registerCustomer/registerCustomer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DataTablesModule} from 'angular-datatables';
 import {AppRoutingModule} from './app-routing-module'
@@ -17,6 +17,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomerComponent } from './customer/customer.component';
 import { BillingStatementComponent } from './billing-statement/billing-statement.component';
+import { BagComponent } from './bag/bag.component';
+
 
 
 
@@ -24,11 +26,12 @@ import { BillingStatementComponent } from './billing-statement/billing-statement
   declarations: [
     AppComponent,
     ProductComponent,
-    UserComponent,
+    RegisterCustomer,
     RestaurantComponent,
     ProductListComponent,
     CustomerComponent,
-    BillingStatementComponent
+    BillingStatementComponent,
+    BagComponent
   ],
   imports: [
     BrowserModule,

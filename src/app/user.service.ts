@@ -29,6 +29,10 @@ export class UserService {
       );
   }
 
+  createCustomer(customer: object): Observable<object> {  
+    return this.http.post(`${this.baseUrl}`+'/createCustomer', customer); 
+  }  
+   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
