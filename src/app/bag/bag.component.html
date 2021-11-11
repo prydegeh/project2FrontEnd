@@ -1,1 +1,6 @@
-<p>bag works!</p>
+<h3>Cart</h3>
+
+<div class="cart-item" fxLayout="row wrap" fxLayoutGap="16px grid" *ngFor="let item of items">
+  <span>{{ item.name }}</span><br>
+  <span>{{ item.price }}</span>
+</div>

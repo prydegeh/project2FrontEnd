@@ -27,7 +27,11 @@
           <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
          
         </ul>
-        
+<div class="checkout">
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="/bag" class="button fancy-button">
+            <i class="material-icons">shopping_cart</i>Checkout
+          </a>
+        </div>   
         </nav>
         
         </header>
