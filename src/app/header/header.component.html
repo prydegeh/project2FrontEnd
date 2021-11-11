@@ -24,7 +24,9 @@
         <ul class="navbar-nav">
           <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/viewProducts" class="nav-link">View Products</a></li>
           <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+          <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/customers" class="nav-link">View Customers</a></li>
           <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+          <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/register" class="nav-link">Register</a></li>
          
         </ul>
 <div class="checkout">

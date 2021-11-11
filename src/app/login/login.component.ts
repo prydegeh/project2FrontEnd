@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { LoginService } from '../login.service';
 import { Customer } from '../models/customer';
+import { HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
 
   userName = '';
   password = '';
