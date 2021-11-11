@@ -11,8 +11,8 @@ import { Customer } from '../models/customer';
 export class LoginComponent implements OnInit {
 
 
-  username = ''
-  password = ''
+  userName = '';
+  password = '';
   invalidLogin = false;
   customer!: Customer;
 
@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
+    if (this.loginservice.authenticate(this.userName, this.password)
     ) {
+      window.alert('Successful Login!');   
       this.router.navigate(['viewProducts'])
       this.invalidLogin = false
     } else
@@ -38,16 +39,17 @@ export class LoginComponent implements OnInit {
 
 
 //   checkLogin() {
-//     this.getCustomerByEmail(this.username);
+//     this.getCustomerByUserName(this.userName);
 //   }
 
-//   getCustomerByEmail(email: string): void {
-//     this.loginService.getCustomer(email)
+//   getCustomerByUserName(userName: string): void {
+//     this.loginService.getCustomer(userName)
 //       .subscribe(customer => {
 //         this.customer = customer;
 //         console.log("this.customer in arrow function :" + this.customer.password);
-//         if (this.customer.email === this.username && this.customer.password === this.password) {
-//           this.router.navigate(['customers/'+this.username])
+//         if (this.customer.userName === this.userName && this.customer.password === this.password) {
+//           window.alert('Successful Login!');
+//           this.router.navigate(['viewProducts'])
 //           this.invalidLogin = false;
 //         } else
 //           this.invalidLogin = true;
