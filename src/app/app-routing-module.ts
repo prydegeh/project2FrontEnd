@@ -8,6 +8,7 @@ import { LoginComponent } from "./login/login.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { AuthGaurdService } from "./auth-gaurd.service"; 
 import { BagComponent } from "./bag/bag.component";
+import { RegisterCustomer } from "./registerCustomer/registerCustomer.component";
 
 const routes: Routes = [
     {path:'', redirectTo: 'login', pathMatch: 'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
     {path:"billingStatement",component:BillingStatementComponent, canActivate:[AuthGaurdService]},
     {path: 'login', component:LoginComponent},
     {path: 'logout', component: LogoutComponent, canActivate:[AuthGaurdService]},
-    { path: 'bag', component: BagComponent, canActivate:[AuthGaurdService]}
+    { path: 'bag', component: BagComponent, canActivate:[AuthGaurdService]},
+    {path: 'register', component:RegisterCustomer}
 
 ];
 
