@@ -13,25 +13,29 @@
 
 <div class="card-container" fxLayout="row wrap" fxLayoutGap="16px grid" >
    
-        <div *ngFor="let food of food">
+        <div *ngFor="let product of products">
           
           <mat-card class="example-card">
             <mat-card-header>
-              <mat-card-title>{{ food.name }}</mat-card-title>
-              <mat-card-subtitle>{{ food.price }}</mat-card-subtitle>
+              <mat-card-title>{{ product.productName }}</mat-card-title>
+              <mat-card-subtitle>{{ product.unitPrice }}</mat-card-subtitle>
             </mat-card-header>
-            <img class="mat-card-image" src= {{food.url}}  alt="Photo of Food">
+            <img class="mat-card-image" src= {{product.img_url}}  alt="Photo of Food">
             <!-- [(NgModel)]= "listItem.quantity" -->
             <mat-card-content>
               <p>
                 There should be words here!
               </p>
             </mat-card-content>
+            <form (ngSubmit)="onSubmit()">
             <mat-card-actions>
               <label>Quantity: </label><input type="number" placeholder="How many?">
-              <button mat-button (click)="addToBag(food)">ADD TO BAG</button>
-              
+              <input type="number" class="form-control" id="quantity" required [(ngModel)]="billingStatement.quantity" name="quantity">
+              <!-- <app-billing-statement hidden [quantity]="quantity"></app-billing-statement> -->
+              <app-billing-statement hidden [product] = "product"></app-billing-statement>
             </mat-card-actions>
+            <button matbutton type="submit">Place Order</button>
+            </form>
           </mat-card>
         </div>
 

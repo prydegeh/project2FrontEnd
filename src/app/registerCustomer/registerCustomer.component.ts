@@ -1,49 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RegisterService } from '../register.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from '../services/user.service';
 import { Customer } from '../models/customer';
+
 @Component({
-  selector: 'app-registerCustomer',
+  selector: 'app-registercustomer',
   templateUrl: './registerCustomer.component.html',
   styleUrls: ['./registerCustomer.component.css']
 })
 export class RegisterCustomer implements OnInit {
 
-  firstname= ''
-  lastname= ''
-  username=''
-  password= ''
-  
+  customer: Customer = new Customer();
+  submitted = false;
 
-  registerForm!: FormGroup;
-  invalidRegister = false;
-  customer!: Customer;
-
-  form: any = { };
-  isSuccessful = false;
-  isSignUpFailed = false;
-  errorMessage = '';
-
-  constructor(private router: Router,
-    public registerservice: RegisterService) { 
-      
-    }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
   }
-    onSubmit(): void {
-      this.registerservice.registerCustomer(this.customer).subscribe(
-        data => {
-          console.log(data);
-          this.isSuccessful = true;
-          this.router.navigate(['login'])
-          this.isSignUpFailed = false;
-        },
-        err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        }
-      );
+
+    newCustomer(): void {
+      this.submitted = false;
+      this.customer = new Customer();
+    }
+  
+    save() {
+      this.userService.registerCustomer(this.customer)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.customer = new Customer();
+      this.gotoList();
+    }
+  
+    onSubmit() {
+      this.submitted = true;
+      this.save();    
+    }
+  
+    gotoList() {
+      this.router.navigate(['/customers']);
+    }
   }
-  }
+
+
+
+
+  

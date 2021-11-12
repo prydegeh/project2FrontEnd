@@ -14,7 +14,7 @@ export class LoginService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private baseUrl = "http://localhost:8100";
+  private baseUrl = "http://localhost:8100/customers";
 
   constructor(private http: HttpClient) { }
 

@@ -1,10 +1,10 @@
-export interface Customer {
+export class Customer {
     
-    id: number;
-    firstName: String ;
-    lastName: String ;
-    email: String ;
-    userName: String;
-    password: String;
+    id!: number;
+    firstName!: String ;
+    lastName!: String ;
+    email!: String ;
+    userName!: String;
+    password!: String;
 
 }

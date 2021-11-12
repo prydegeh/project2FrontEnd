@@ -1,33 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import {Food} from '../food';
-import { FOODS } from '../mock-food';
-import { BagService } from '../bag.service';
+import { BillingStatementComponent } from '../billing-statement/billing-statement.component';
+import { BillingStatement } from '../models/billing-statement';
+import { Product } from '../models/product';
+import { ProductService } from '../services/product-service.service';
 
 @Component({
+  providers: [BillingStatementComponent],
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
 
-  food = FOODS;
-  selectedFood?: Food;
+  products : Product [] = [];
+  billingStatement!: BillingStatement;
+  submitted = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private bagService: BagService
-    ) {}
+  constructor(public productService:ProductService,
+              private comp: BillingStatementComponent
+    ) { }
 
-    addToBag(food: Food) {
-      this.bagService.addToBag(food);
-      window.alert('Your product has been added to the cart!');
-    }
-
-  ngOnInit(){
+  ngOnInit(): void {
+    this.getAllProducts();
+    console.log("I'm inside OnInit of BillingStatement Component");
   }
-    onSelect(food: Food): void {
-    this.selectedFood = food;
+  getAllProducts(): void {
+    this.productService.getAllProducts()
+    .subscribe(products => this.products = products);
   }
 
+  public createBillingStatement(): void{
+    this.comp.createBillingStatement();
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.createBillingStatement();    
+
+}
 }

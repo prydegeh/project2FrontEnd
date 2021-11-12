@@ -29,7 +29,12 @@ export class BillingStatementService {
       catchError(this.handleError<BillingStatement[]>('getAllBillingStatements', []))
    );
   }
-
+  
+  createBillingStatement(billingStatment: Object): Observable<object> {
+    return this.http.post(this.baseUrl+'/createBillingStatement', billingStatment).pipe(
+      tap(_ => this.log('fetched billing statements')),
+      catchError(this.handleError<BillingStatement[]>('createBilingStatement', [])));
+  }
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

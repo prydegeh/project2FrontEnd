@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';  
 import { Observable, of } from 'rxjs'; 
-import { Customer } from './models/customer';
+import { Customer } from '../models/customer';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
@@ -27,12 +27,21 @@ export class UserService {
         tap(_ => this.log('fetched customers')),
         catchError(this.handleError<Customer[]>('getCustomers', []))
       );
+
   }
 
-  createCustomer(customer: Customer): Observable<object> {  
+  registerCustomer(customer: Customer): Observable<object> {  
     return this.http.post(`${this.baseUrl}`+'/createCustomer', customer); 
   }  
-   
+
+  updateCustomer(id: number, value: any): Observable<Object> {
+        return this.http.put(`${this.baseUrl}/${id}`, value);
+      }
+    
+  deleteCustomer(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  }
+    
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

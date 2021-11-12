@@ -15,9 +15,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let billingStatement of billingStatements">
-              <td>{{billingStatement.restaurantName}}</td>
-              <td>{{billingStatement.productName}}</td>
-              <td>{{billingStatement.unitPrice}}</td>
+              <td>{{billingStatement.product.restaurantName}}</td>
+              <td>{{billingStatement.product.productName}}</td>
+              <td>{{billingStatement.product.unitPrice}}</td>
               <td>{{billingStatement.quantity}}</td>
               <td>{{billingStatement.extendedPrice}}</td>
             </tr>

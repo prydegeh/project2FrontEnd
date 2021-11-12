@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductServiceService {
+export class ProductService {
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,10 +24,16 @@ export class ProductServiceService {
   }
   getAllProducts(): Observable<Product[]> {
 
-    return this.http.get<Product[]>(this.baseUrl+'products-list').pipe(
+    return this.http.get<Product[]>(this.baseUrl+'products').pipe(
       tap(_ => this.log('fetched products')),
       catchError(this.handleError<Product[]>('getAllProducts', []))
-    );
+   );
+  }
+  
+  createProduct(product: Object): Observable<object> {
+    return this.http.post(this.baseUrl+'createProduct', product).pipe(
+      tap(_ => this.log('fetched products')),
+      catchError(this.handleError<Product[]>('createProduct', [])));
   }
   
   private handleError<T>(operation = 'operation', result?: T) {
@@ -42,17 +48,5 @@ export class ProductServiceService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-
-  // constructor(private http:HttpClient) { 
-  //   this.productsUrl = 'http://localhost:8100/products/';
-  // }
-
-  // public getAllProducts(): Observable<Product[]> {
-  //   return this.http.get<Product[]>(this.productsUrl);
-  // }
-
-  // public save(product: Product) {
-  //   return this.http.post<Product>(this.productsUrl, product);
-  // }
 }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Customer } from '../models/customer';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-customer',
@@ -8,18 +10,35 @@ import { UserService } from '../user.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  customers!: Observable<Customer[]>;
 
-  customers : Customer [] = [];
+  constructor(private UserService: UserService,
+    private router: Router) {}
 
-  constructor(public customerService:UserService) { }
-
-  ngOnInit(): void {
-    this.getAllCustomers();
-    console.log("I'm inside OnInit of Account Component");
+  ngOnInit() {
+    this.reloadData();
   }
-  getAllCustomers(): void {
-    this.customerService.getAllCustomers()
-    .subscribe(customers => this.customers = customers);
+
+  reloadData() {
+    this.customers = this.UserService.getAllCustomers();
+  }
+
+  deleteEmployee(id: number) {
+    this.UserService.deleteCustomer(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
+
+  customerDetails(id: number){
+    this.router.navigate(['details', id]);
+  }
+
+  updateCustomer(id: number){
+    this.router.navigate(['update', id]);
   }
 
 }

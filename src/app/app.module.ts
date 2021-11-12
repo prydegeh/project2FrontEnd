@@ -12,8 +12,6 @@ import {AppRoutingModule} from './app-routing-module'
 import {MaterialModule} from '../material.module';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
-import { RestaurantComponent } from './restaurant/restaurant.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CustomerComponent } from './customer/customer.component';
 import { BillingStatementComponent } from './billing-statement/billing-statement.component';
@@ -21,6 +19,7 @@ import { BagComponent } from './bag/bag.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 
 
@@ -30,14 +29,13 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     ProductComponent,
     RegisterCustomer,
-    RestaurantComponent,
-    ProductListComponent,
     CustomerComponent,
     BillingStatementComponent,
     BagComponent,
     LoginComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

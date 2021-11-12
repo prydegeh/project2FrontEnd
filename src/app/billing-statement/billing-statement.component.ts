@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BillingStatement } from '../models/billing-statement';
+import { Product } from '../models/product';
 import { BillingStatementService } from '../services/billing-statement.service';
 
 @Component({
@@ -10,6 +11,11 @@ import { BillingStatementService } from '../services/billing-statement.service';
 export class BillingStatementComponent implements OnInit {
 
   billingStatements : BillingStatement [] = [];
+  billingStatement! : BillingStatement;
+  @Input() quantity! : number;
+  @Input() unitPrice!: number;
+  @Input() product!: Product;
+  extendedPrice: number = this.unitPrice * this.quantity;
 
   constructor(public billingStatementService:BillingStatementService) { }
 
@@ -21,5 +27,16 @@ export class BillingStatementComponent implements OnInit {
     this.billingStatementService.getAllBillingStatements()
     .subscribe(billingStatements => this.billingStatements = billingStatements);
   }
+
+  createBillingStatement(): void{
+      
+    this.billingStatement.quantity = this.quantity;
+    this.billingStatement.extendedPrice = this.extendedPrice;
+    this.billingStatement.product = this.product;
+    console.log(this.billingStatement);
+    this.billingStatementService.createBillingStatement(this.billingStatement);
+    
+}
+
 
 }
