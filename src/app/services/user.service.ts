@@ -30,6 +30,10 @@ export class UserService {
 
   }
 
+  getCustomer(id: number): Observable<any> {
+    return this.http.get(this.baseUrl + "getCustomerById/" + id);
+  }
+
   registerCustomer(customer: Customer): Observable<object> {  
     return this.http.post(`${this.baseUrl}`+'/createCustomer', customer); 
   }  

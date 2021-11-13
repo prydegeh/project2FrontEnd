@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer/update-customer.component';
 
 
 
@@ -41,7 +42,8 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     HeaderComponent,
     CreateProductComponent,
     ProductListComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
