@@ -20,6 +20,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { CreateProductComponent } from './create-product/create-product.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 
@@ -30,12 +32,16 @@ import { CreateProductComponent } from './create-product/create-product.componen
     ProductComponent,
     RegisterCustomer,
     CustomerComponent,
+    ProductListComponent,
+    UpdateProductComponent,
     BillingStatementComponent,
     BagComponent,
     LoginComponent,
     LogoutComponent,
     HeaderComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    ProductListComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,

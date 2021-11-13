@@ -30,12 +30,24 @@ export class ProductService {
    );
   }
   
+  getProduct(id: number): Observable<any> {
+    return this.http.get(this.baseUrl + "getProductById/"+id);
+  }
+
   createProduct(product: Object): Observable<object> {
     return this.http.post(this.baseUrl+'createProduct', product).pipe(
       tap(_ => this.log('fetched products')),
       catchError(this.handleError<Product[]>('createProduct', [])));
   }
   
+  updateProduct(id: number, value: any): Observable<Object> {
+    return this.http.put(this.baseUrl+ "editProduct/" +id, value);
+  }
+
+  deleteProduct(id: number): Observable<any> {
+    return this.http.delete(this.baseUrl + "deleteProduct/" + id, { responseType: 'text' });
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

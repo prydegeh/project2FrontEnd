@@ -24,15 +24,15 @@
             <!-- [(NgModel)]= "listItem.quantity" -->
             <mat-card-content>
               <p>
-                There should be words here!
+                {{product.restaurantName}}
               </p>
             </mat-card-content>
             <form (ngSubmit)="onSubmit()">
             <mat-card-actions>
               <label>Quantity: </label><input type="number" placeholder="How many?">
-              <input type="number" class="form-control" id="quantity" required [(ngModel)]="billingStatement.quantity" name="quantity">
+              <!-- <input type="number" class="form-control" id="quantity" required [(ngModel)]="billingStatement.quantity" name="quantity"> -->
               <!-- <app-billing-statement hidden [quantity]="quantity"></app-billing-statement> -->
-              <app-billing-statement hidden [product] = "product"></app-billing-statement>
+              <!-- <app-billing-statement hidden [product] = "product"></app-billing-statement> -->
             </mat-card-actions>
             <button matbutton type="submit">Place Order</button>
             </form>
