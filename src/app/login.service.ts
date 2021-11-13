@@ -22,8 +22,8 @@ export class LoginService {
     console.log(`LoginService: ${message}`);
   }
 
-  getCustomer(username:string):Observable<Customer> {
-    const fullUrl = this.baseUrl + "/getCustomerByUsernName/"+username;
+  getCustomerByUserName(username:string):Observable<Customer> {
+    const fullUrl = this.baseUrl + "/getCustomerByUserName/"+username;
     console.log("full Url =" + fullUrl)
     return this.http.get<Customer>(fullUrl)
       .pipe(

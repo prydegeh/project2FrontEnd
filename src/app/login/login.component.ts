@@ -13,48 +13,42 @@ export class LoginComponent implements OnInit {
 
   userName = '';
   password = '';
-  invalidLogin = false;
   customer!: Customer;
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: LoginService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit(): void {
+    }
+  
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.userName, this.password)
-    ) {
-      window.alert('Successful Login!');   
-      this.router.navigate(['viewProducts'])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+     let customer = this.authenticate(this.userName);
+    
+  
   }
 
-//   constructor(private router: Router, private loginService: LoginService) { }
+  authenticate(userName: string): void {
+    this.loginservice.getCustomerByUserName(userName)
+      .subscribe(customer => {
+        this.customer = customer;
+        console.log("this.customer in arrow function :" + this.customer.password);
+     if (this.customer.userName === this.userName && this.password === this.customer.password) {
+      sessionStorage.setItem('username', this.userName)
+      return true;
+    } else {
+      return false;
+    }
+      });
+  }
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('username')
+    console.log(!(user === null))
+    return !(user === null)
+  }
 
-//   ngOnInit(): void {
-//   }
+  logOut() {
+    sessionStorage.removeItem('username')
+  }
 
-
-//   checkLogin() {
-//     this.getCustomerByUserName(this.userName);
-//   }
-
-//   getCustomerByUserName(userName: string): void {
-//     this.loginService.getCustomer(userName)
-//       .subscribe(customer => {
-//         this.customer = customer;
-//         console.log("this.customer in arrow function :" + this.customer.password);
-//         if (this.customer.userName === this.userName && this.customer.password === this.password) {
-//           window.alert('Successful Login!');
-//           this.router.navigate(['viewProducts'])
-//           this.invalidLogin = false;
-//         } else
-//           this.invalidLogin = true;
-
-//       });
-
-// }
 }

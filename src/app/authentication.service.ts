@@ -10,7 +10,7 @@ export class AuthenticationService {
 
   constructor() { }
   authenticate(username: string, password: string) {
-    if (username === "guest" && password === "password") {
+    if (username === username && password === "password") {
       sessionStorage.setItem('username', username)
       return true;
     } else {
