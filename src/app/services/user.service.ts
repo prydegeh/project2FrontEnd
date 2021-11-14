@@ -31,7 +31,7 @@ export class UserService {
   }
 
   getCustomer(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + "getCustomerById/" + id);
+    return this.http.get(this.baseUrl + "/getCustomerById/" + id);
   }
 
   registerCustomer(customer: Customer): Observable<object> {  
@@ -39,11 +39,11 @@ export class UserService {
   }  
 
   updateCustomer(id: number, value: any): Observable<Object> {
-        return this.http.put(`${this.baseUrl}/${id}`, value);
+        return this.http.put(this.baseUrl+  "/editCustomer/" + id, value);
       }
     
   deleteCustomer(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    return this.http.delete(this.baseUrl +"/deleteCustomer/" +id, { responseType: 'text' });
   }
     
   private handleError<T>(operation = 'operation', result?: T) {

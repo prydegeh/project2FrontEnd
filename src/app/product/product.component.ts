@@ -4,6 +4,8 @@ import { BillingStatement } from '../models/billing-statement';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product-service.service';
 
+
+
 @Component({
   providers: [BillingStatementComponent],
   selector: 'app-product',

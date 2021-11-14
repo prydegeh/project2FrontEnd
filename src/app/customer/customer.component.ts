@@ -23,7 +23,7 @@ export class CustomerComponent implements OnInit {
     this.customers = this.UserService.getAllCustomers();
   }
 
-  deleteEmployee(id: number) {
+  deleteCustomer(id: number) {
     this.UserService.deleteCustomer(id)
       .subscribe(
         data => {
@@ -38,7 +38,7 @@ export class CustomerComponent implements OnInit {
   }
 
   updateCustomer(id: number){
-    this.router.navigate(['update', id]);
+    this.router.navigate(['updateCustomers', id]);
   }
 
 }

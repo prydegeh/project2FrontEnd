@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
         console.log("this.customer in arrow function :" + this.customer.password);
      if (this.customer.userName === this.userName && this.password === this.customer.password) {
       sessionStorage.setItem('username', this.userName)
+      this.router.navigate(['viewProducts'])
       return true;
     } else {
       return false;

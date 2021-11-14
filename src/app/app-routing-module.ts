@@ -11,6 +11,7 @@ import { RegisterCustomer } from "./registerCustomer/registerCustomer.component"
 import { CreateProductComponent } from "./create-product/create-product.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { UpdateProductComponent } from "./update-product/update-product.component";
+import { UpdateCustomerComponent } from "./update-customer/update-customer/update-customer.component";
 const routes: Routes = [
     {path:'', redirectTo: 'login', pathMatch: 'full'},
     {path: 'viewProducts', component: ProductComponent, canActivate:[AuthGaurdService]},
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path: 'register', component:RegisterCustomer},
     {path:"createProducts",component:CreateProductComponent, canActivate:[AuthGaurdService]},
     {path:"listProducts",component:ProductListComponent, canActivate:[AuthGaurdService]},
-    {path:"updateProducts/:id",component:UpdateProductComponent, canActivate:[AuthGaurdService]}
+    {path:"updateProducts/:id",component:UpdateProductComponent, canActivate:[AuthGaurdService]},
+    {path:"updateCustomers/:id",component:UpdateCustomerComponent, canActivate:[AuthGaurdService]}
 ];
 
 @NgModule({
